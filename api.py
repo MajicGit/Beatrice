@@ -214,7 +214,8 @@ async def getWBANFARM():
 
     #Gather all the found networks
     for net in r["supportedNetworks"]:
-        networks.append(net["network"])
+        if net["network"] != "fantom":
+            networks.append(net["network"])
 
     tasks = [] 
 
