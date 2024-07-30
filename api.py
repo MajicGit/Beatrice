@@ -334,7 +334,7 @@ async def getWbanFarms():
     output = [] 
     #Start off by querying the API to find out all networks wban is on
     r = await json_get(f"https://api.zapper.xyz/v2/apps/banano",headers={'accept': '*/*','Authorization': f'Basic {settings.ZAPPER_API}'})
-    networks = []
+    networks = ["ethereum", "fantom", "polygon", "arbitrum", "binance-smart-chain"]
     if r is None or 'supportedNetworks' not in r:
         return None    
 
